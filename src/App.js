@@ -12,6 +12,7 @@ import NewKegForm from './components/NewKegForm';
 import Footer from './components/Footer';
 import Welcome from './components/Welcome';
 import SignIn from './components/SignIn';
+import AreYou21 from './components/AreYou21';
 import PropTypes from 'prop-types';
 
 
@@ -24,6 +25,7 @@ class App extends React.Component {
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
      this.handleChangePintCount = this.handleChangePintCount.bind(this);
+
   }
 
   handleAddingNewKegToList(newKeg){
@@ -50,7 +52,7 @@ class App extends React.Component {
       <div>
         <Header/>
         <NavigationBar/>
-
+        <AreYou21/>
         <Switch>
 
           <Route exact path="/" component={ Welcome } />
