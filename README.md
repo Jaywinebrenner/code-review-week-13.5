@@ -67,4 +67,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 Copyright (c) 2020 **Jay Winebrenner**
 
 
-  <Route path='/newkegform' component={NewKegForm} />
+handleChangePintCount(id) {
+console.log(id);
+let newMasterKegList = this.state.masterKegList.slice();
+newMasterKegList.forEach((keg) => {
+  if (keg.id == id) {
+    newMasterKegList[id].pintsLeft -= 1;
+  }
+})
+this.setState({masterKegList: newMasterKegList});
+}

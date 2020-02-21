@@ -36,6 +36,8 @@ class App extends React.Component {
   newMasterKegList.forEach((keg) => {
     if (keg.id == id) {
       newMasterKegList[id].pintsLeft -= 1;
+    } else {
+      return false;
     }
   })
   this.setState({masterKegList: newMasterKegList});
@@ -48,7 +50,6 @@ class App extends React.Component {
         <NavigationBar/>
 
         <Switch>
-
 
           <Route exact path="/" component={ Welcome } />
           <Route path='/kegs' render={()=><KegList

@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
+
 
 function Keg(props){
 
   function changePintCount(event) {
-    console.log("clicked");
+    console.log(props.id);
     props.onChangePintCount(props.id)
   }
-
 
   return (
     <div className='keg-card-body'>
