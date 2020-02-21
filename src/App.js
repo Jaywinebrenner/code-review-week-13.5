@@ -13,25 +13,46 @@ import Footer from './components/Footer';
 import Welcome from './components/Welcome';
 import SignIn from './components/SignIn';
 
-function App() {
-  return (
-    <div>
-      <Header/>
-          <NavigationBar/>
+class App extends React.Component {
 
-      <Switch>
+  constructor(props) {
+    super(props);
+    this.state= {
+      masterKegList: []
+    };
+    this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
+  }
 
-        <Route exact path="/" component={ Welcome } />
-             <Route path='/kegs' component={KegList} />
-             <Route path='/about' component={About} />
-             <Route path='/newkegform' component={NewKegForm} />
-             <Route path='/signin' component={SignIn} />
-             <Route component={Error404} />
+  handleAddingNewKegToList(newKeg){
+    let newMasterKegList = this.state.masterKegList.slice();
+    newMasterKegList.push(newKeg);
+    this.setState({masterKegList: newMasterKegList});
+  }
 
-      </Switch>
-      <Footer/>
-    </div>
-  );
+  render(){
+    return (
+      <div>
+        <Header/>
+        <NavigationBar/>
+
+        <Switch>
+
+          <Route exact path="/" component={ Welcome } />
+          <Route path='/kegs' component={KegList} />
+          <Route path='/about' component={About} />
+
+          <Route path='/signin' component={SignIn} />
+          <Route component={Error404} />
+          <Route path='/newKeg' render={()=><NewKegForm
+               onNewKegCreation={this.handleAddingNewKegToList} />} />
+
+        </Switch>
+        <Footer/>
+      </div>
+    );
+  }
 }
+
+
 
 export default App;
