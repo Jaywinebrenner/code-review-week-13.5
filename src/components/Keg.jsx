@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 function Keg(props){
 
   const [counter, setCounter] = useState(props.pintsLeft);
-console.log(counter);
+
   function changePintCount(event) {
     console.log(props.id);
     props.onChangePintCount(props.id)
@@ -96,8 +96,6 @@ console.log(counter);
       </div>
     );
   }
-
-
 
   Keg.propTypes = {
     name: PropTypes.string.isRequired,
