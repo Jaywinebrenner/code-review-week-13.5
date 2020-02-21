@@ -32,10 +32,10 @@ class App extends React.Component {
 
   handleChangePintCount(id) {
   console.log(id);
-  var newMasterKegList = this.state.masterKegList.slice();
+  let newMasterKegList = this.state.masterKegList.slice();
   newMasterKegList.forEach((keg) => {
     if (keg.id == id) {
-      newMasterKegList[id].pintsLeft += 1;
+      newMasterKegList[id].pintsLeft -= 1;
     }
   })
   this.setState({masterKegList: newMasterKegList});

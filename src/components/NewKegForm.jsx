@@ -1,21 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function NewKegForm(props){
   let _name = null;
   let _brand = null
   let _price = null;
   let _alcoholContent = null;
-  let _availablePints = null;
+  let _pintsLeft = null;
 
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
-      props.onNewKegCreation({name: _name.value, brand: _brand.value, price: _price.value, alcoholContent: _alcoholContent.value, availablePints: _availablePints.value});
+      props.onNewKegCreation({name: _name.value, brand: _brand.value, price: _price.value, alcoholContent: _alcoholContent.value, pintsLeft: _pintsLeft.value, id: v4()});
     _name.value = '';
     _brand.value = '';
     _price.value = '';
     _alcoholContent.value = '';
-    _availablePints.value = '';
+    _pintsLeft.value = '';
   }
   return (
     <div className='newkegform-wrapper'>
@@ -105,9 +106,9 @@ function NewKegForm(props){
             <input
               class='newkeg-input'
               type='number'
-              id='availablePints'
+              id='pintsLeft'
               placeholder='Available Pints (Hint: 124)'
-              ref={(input) => {_availablePints = input;}}
+              ref={(input) => {_pintsLeft = input;}}
               />
           <br/>
           <button class='newkeg-button'type='submit'>Enter New Keg</button>

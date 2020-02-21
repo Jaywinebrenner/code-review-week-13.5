@@ -1,7 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function Keg(props){
+
+  function changePintCount(event) {
+    console.log("clicked");
+    props.onChangePintCount(props.id)
+  }
+
+
   return (
     <div className='keg-card-body'>
 
@@ -79,7 +87,7 @@ function Keg(props){
             <h6>Alcohol Content: {props.alcoholContent}</h6>
             <h6> Pints Left: {props.pintsLeft}</h6>
             <button className='employee-edit-button'>Employee Edit</button>
-              <button className='pint-sold-button'>Pint Sold</button>
+              <button onClick={changePintCount} className='pint-sold-button'>Pint Sold</button>
           </div>
         </div>
       </div>
@@ -91,7 +99,8 @@ function Keg(props){
     brand: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     alcoholContent: PropTypes.number.isRequired,
-    pintsLeft: PropTypes.number.isRequired
+    pintsLeft: PropTypes.number.isRequired,
+    onChangePintCount: PropTypes.func
 
   };
 
