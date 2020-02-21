@@ -11,11 +11,14 @@ function KegList(props){
       </div>
 
       {props.kegList.map((keg, index) =>
-        <Keg name={keg.name}
+        <Keg
+        onChangePintCount={props.onChangePintCount}
+        name={keg.name}
         brand={keg.brand}
         price={keg.price}
         alcoholContent={keg.alcoholContent}
         availablePints={keg.availablePints}
+        pintsLeft={keg.pintsLeft}
         key={index}/>
       )}
 

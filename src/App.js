@@ -21,6 +21,7 @@ class App extends React.Component {
       masterKegList: []
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this);
+     this.handleChangePintCount = this.handleChangePintCount.bind(this);
   }
 
   handleAddingNewKegToList(newKeg){
@@ -28,6 +29,17 @@ class App extends React.Component {
     newMasterKegList.push(newKeg);
     this.setState({masterKegList: newMasterKegList});
   }
+
+  handleChangePintCount(id) {
+  console.log(id);
+  var newMasterKegList = this.state.masterKegList.slice();
+  newMasterKegList.forEach((keg) => {
+    if (keg.id == id) {
+      newMasterKegList[id].pintsLeft += 1;
+    }
+  })
+  this.setState({masterKegList: newMasterKegList});
+}
 
   render(){
     return (
@@ -39,7 +51,10 @@ class App extends React.Component {
 
 
           <Route exact path="/" component={ Welcome } />
-          <Route path='/kegs' render={()=><KegList kegList={this.state.masterKegList} />} />
+          <Route path='/kegs' render={()=><KegList
+              kegList={this.state.masterKegList}
+              onChangePintCount={this.handleChangePintCount}
+              />} />
           <Route path='/about' component={About} />
           <Route path='/newkegform' render={()=><NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />} />
           <Route path='/signin' component={SignIn} />
@@ -52,6 +67,7 @@ class App extends React.Component {
     );
   }
 }
+
 
 
 
