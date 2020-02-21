@@ -38,10 +38,10 @@ function KegList(props){
   );
 }
 
-console.log('onChangePintCount')
+
 KegList.propTypes = {
-  kegList: PropTypes.array,
-  onChangePintCount: PropTypes.func
+  onChangePintCount: PropTypes.func,
+  kegList: PropTypes.array
 };
 
 export default KegList;

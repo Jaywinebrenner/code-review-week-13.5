@@ -77,3 +77,8 @@ newMasterKegList.forEach((keg) => {
 })
 this.setState({masterKegList: newMasterKegList});
 }
+
+
+
+
+onClick={changePintCount}

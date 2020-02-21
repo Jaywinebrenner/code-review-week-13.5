@@ -12,6 +12,7 @@ import NewKegForm from './components/NewKegForm';
 import Footer from './components/Footer';
 import Welcome from './components/Welcome';
 import SignIn from './components/SignIn';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
 
