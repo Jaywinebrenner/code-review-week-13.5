@@ -10,6 +10,15 @@ function KegList(props){
         <h4 className='.about-ken-text'>Available Kegs</h4>
       </div>
 
+      {props.kegList.map((keg, index) =>
+        <Keg name={keg.name}
+        brand={keg.brand}
+        price={keg.price}
+        alcoholContent={keg.alcoholContent}
+        availablePints={keg.availablePints}
+        key={index}/>
+      )}
+
         <style jsx>{`
             .keglist-div{
               margin-top: 0px;
@@ -23,14 +32,6 @@ function KegList(props){
             }
         `}</style>
 
-        {props.kegList.map((Keg, index) =>
-          <Keg name={Keg.name}
-            brand={Keg.brand}
-            price={Keg.price}
-            alcoholContent={Keg.alcoholContent}
-            availablePints={Keg.availablePints}
-            key={index}/>
-      )}
     </div>
   );
 }
