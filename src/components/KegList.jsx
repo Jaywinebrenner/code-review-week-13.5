@@ -1,10 +1,9 @@
 
 import React from 'react';
 import Keg from './Keg';
+import PropTypes from 'prop-types';
 
-
-
-function KegList(){
+function KegList(props){
   return (
     <div className='keglist-div'>
       <div className='keglist-subheader'>
@@ -22,21 +21,22 @@ function KegList(){
               background-color: darkgray;
               color: white;
             }
-
-
         `}</style>
 
-
-      {masterKegList.map((keg, index) =>
-        <Keg name={keg.name}
-          brand={keg.brand}
-          price={keg.price}
-          alcoholContent={keg.alcoholContent}
-          pintsLeft={keg.pintsLeft}
-          key={index}/>
+        {props.kegList.map((Keg, index) =>
+          <Keg name={Keg.name}
+            brand={Keg.brand}
+            price={Keg.price}
+            alcoholContent={Keg.alcoholContent}
+            availablePints={Keg.availablePints}
+            key={index}/>
       )}
     </div>
   );
 }
+
+KegList.propTypes = {
+  kegList: PropTypes.array
+};
 
 export default KegList;

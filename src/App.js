@@ -37,14 +37,14 @@ class App extends React.Component {
 
         <Switch>
 
-          <Route exact path="/" component={ Welcome } />
-          <Route path='/kegs' component={KegList} />
-          <Route path='/about' component={About} />
 
+          <Route exact path="/" component={ Welcome } />
+          <Route path='/kegs' render={()=><KegList kegList={this.state.masterKegList} />} />
+          <Route path='/about' component={About} />
+          <Route path='/newkegform' render={()=><NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />} />
           <Route path='/signin' component={SignIn} />
           <Route component={Error404} />
-          <Route path='/newKeg' render={()=><NewKegForm
-               onNewKegCreation={this.handleAddingNewKegToList} />} />
+          <Route path='/newkegform' component={NewKegForm}/>
 
         </Switch>
         <Footer/>
