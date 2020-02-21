@@ -1,10 +1,12 @@
+import React, { useState } from 'react';
 
-import React from 'react';
 import PropTypes from 'prop-types';
 
 
 function Keg(props){
 
+  const [counter, setCounter] = useState(props.pintsLeft);
+console.log(counter);
   function changePintCount(event) {
     console.log(props.id);
     props.onChangePintCount(props.id)
@@ -85,9 +87,10 @@ function Keg(props){
             <h3 className='brand-text'>{props.brand}</h3>
             <h6>Price: {props.price}</h6>
             <h6>Alcohol Content: {props.alcoholContent}</h6>
-            <h6> Pints Left: {props.pintsLeft}</h6>
+            <h6> Pints Left: {counter}</h6>
             <button className='employee-edit-button'>Employee Edit</button>
               <button onClick={changePintCount} className='pint-sold-button'>Pint Sold</button>
+              <button onClick={() => setCounter(counter -1)}>Pint Sold Hooks</button>
           </div>
         </div>
       </div>
