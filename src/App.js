@@ -50,12 +50,11 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <Header/>
-        <NavigationBar/>
-        <AreYou21/>
+        <AreYou21 exact path='/'/>
         <Switch>
-
-          <Route exact path="/" component={ Welcome } />
+          <Header/>
+          <NavigationBar/>
+          <Route exact path="/home" component={ Welcome } />
           <Route path='/kegs' render={()=><KegList
               kegList={this.state.masterKegList}
               onChangePintCount={this.handleChangePintCount}
@@ -66,8 +65,8 @@ class App extends React.Component {
           <Route component={Error404} />
           <Route path='/newkegform' component={NewKegForm}/>
 
+          <Footer/>
         </Switch>
-        <Footer/>
       </div>
     );
   }

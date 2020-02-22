@@ -9,11 +9,6 @@ function Header(){
   return (
     <div className="header-body">
 
-
-      <Link to="/kegs">Home</Link> | <Link to="/newbody">Do you wanna?</Link>
-
-
-
       <style jsx>{`
           .header-body {
             height: 500px;
@@ -25,11 +20,8 @@ function Header(){
             background-size: 100% 100%;
           }
 
-
-
-
           `}</style>
-        <button class='btn btn-primary' type="button">Click Me!</button>
+
       </div>
     );
   }
