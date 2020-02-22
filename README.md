@@ -79,6 +79,6 @@ this.setState({masterKegList: newMasterKegList});
 }
 
 
-
+            background-image: url("https://i0.wp.com/www.maxim.com/.image/t_share/MTQ2MjY3MDk3Njg3NjYzNjMz/beer.png?resize=914%2C471&ssl=1");
 
 onClick={changePintCount}

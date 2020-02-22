@@ -12,7 +12,7 @@ import NewKegForm from './components/NewKegForm';
 import Footer from './components/Footer';
 import Welcome from './components/Welcome';
 import SignIn from './components/SignIn';
-import AreYou21 from './components/AreYou21';
+
 import PropTypes from 'prop-types';
 
 
@@ -50,11 +50,12 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <AreYou21 exact path='/'/>
+        <Header/>
+        <NavigationBar/>
+
         <Switch>
-          <Header/>
-          <NavigationBar/>
-          <Route exact path="/home" component={ Welcome } />
+
+          <Route exact path="/" component={ Welcome } />
           <Route path='/kegs' render={()=><KegList
               kegList={this.state.masterKegList}
               onChangePintCount={this.handleChangePintCount}
@@ -65,8 +66,8 @@ class App extends React.Component {
           <Route component={Error404} />
           <Route path='/newkegform' component={NewKegForm}/>
 
-          <Footer/>
         </Switch>
+        <Footer/>
       </div>
     );
   }
