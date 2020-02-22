@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 } from 'uuid';
+import Header from './Header';
+import Footer from './Footer';
+import NavigationBar from './NavigationBar';
 
 function NewKegForm(props){
   let _name = null;

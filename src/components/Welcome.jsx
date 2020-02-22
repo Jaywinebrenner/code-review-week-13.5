@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Header from './Header';
+import Footer from './Footer';
+import NavigationBar from './NavigationBar';
 
 function Welcome(){
 
@@ -9,11 +11,11 @@ function Welcome(){
     webkitTextStroke: '2px black',
     fontSize:' 10rem',
     fontFamily: "'Modak', cursive"
-
   }
 
   return (
     <div className="welcome-text-div">
+
 
       <h2 className='welcome-text'>Welcome to</h2>
       <h1 className='kens-kegs-header' style={alternateCSS}>Ken's Kegs</h1>
@@ -53,10 +55,8 @@ function Welcome(){
 
           }
 
-
-
           `}</style>
-
+  
       </div>
     );
   }

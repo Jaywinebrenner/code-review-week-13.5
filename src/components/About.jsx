@@ -1,4 +1,7 @@
 import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import NavigationBar from './NavigationBar';
 
 
 function About(){

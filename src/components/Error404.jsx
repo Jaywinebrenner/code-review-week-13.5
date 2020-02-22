@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
+import NavigationBar from './NavigationBar';
 
 function Error404(props){
   return (

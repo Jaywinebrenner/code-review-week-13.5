@@ -50,8 +50,8 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <Header/>
         <NavigationBar/>
+        <Header/>
 
         <Switch>
 
