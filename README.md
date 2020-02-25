@@ -2,6 +2,9 @@
 
 ## By **Jay Winebrenner**
 
+##  About
+
+Ken's Kegs is a ReactJS web app which has full CRUD functionality for the fictitious Ken's Kegs Brewery.
 
 ## Setup/Installation Requirements
 
@@ -32,26 +35,6 @@
 
 - - -
 
-## Troubleshooting
-
-#### Can't install RMagick. Can't find libMagick or one of the dependent libraries. Check the mkmf.log file for more detailed information
-
-Typically this message means that one or more of the libraries that ImageMagick
-depends on hasn't been installed. Examine the mkmf.log file in the ext/RMagick
-subdirectory of the installation directory for any error messages. These
-messages typically contain enough additional information for you to be able to
-diagnose the problem. Also see [this FAQ](https://web.archive.org/web/20131206133600/http://rmagick.rubyforge.org/install-faq.html#libmagick).
-
-On OS X with Homebrew, try (re)installing pkg-config:
-
-```sh
-brew uninstall pkg-config
-brew install pkg-config
-brew unlink pkg-config
-brew link pkg-config
-```
-- - -
-
 ### Support and Contact
 
 If you run into any issues or have any questions as about anything, please contact **Jay Winebrenner**. jaywinebrenner@gmail.com
@@ -65,20 +48,3 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 Copyright (c) 2020 **Jay Winebrenner**
-
-
-handleChangePintCount(id) {
-console.log(id);
-let newMasterKegList = this.state.masterKegList.slice();
-newMasterKegList.forEach((keg) => {
-  if (keg.id == id) {
-    newMasterKegList[id].pintsLeft -= 1;
-  }
-})
-this.setState({masterKegList: newMasterKegList});
-}
-
-
-            background-image: url("https://i0.wp.com/www.maxim.com/.image/t_share/MTQ2MjY3MDk3Njg3NjYzNjMz/beer.png?resize=914%2C471&ssl=1");
-
-onClick={changePintCount}
